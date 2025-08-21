@@ -1,15 +1,22 @@
 import React, { useState } from "react";
-import { QrReader } from "@blackbox-vision/react-qr-reader";
+import QrReader from "react-qr-scanner";
 
 export const PresaleModal = ({ isOpen, onClose }) => {
   const [scannedAddress, setScannedAddress] = useState("");
 
   if (!isOpen) return null;
 
+  const handleScan = (data) => {
+    if (data) setScannedAddress(data.text || data);
+  };
+
+  const handleError = (err) => {
+    console.error(err);
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
       <div className="bg-[#0a0f1c] p-6 md:p-10 rounded-2xl shadow-2xl w-[90%] max-w-md text-white relative">
-        {/* Close Button */}
         <button
           className="absolute top-4 right-4 text-gray-400 hover:text-white text-xl"
           onClick={onClose}
@@ -25,24 +32,16 @@ export const PresaleModal = ({ isOpen, onClose }) => {
           Scan a QR code to fill in wallet address
         </p>
 
-        {/* QR Scanner */}
         <div className="rounded-lg overflow-hidden mb-4">
           <QrReader
-            constraints={{ facingMode: "environment" }}
-            onResult={(result, error) => {
-              if (!!result) {
-                setScannedAddress(result?.text);
-              }
-              if (!!error) {
-                console.error(error);
-              }
-            }}
-            containerStyle={{ width: "100%" }}
-            videoStyle={{ width: "100%" }}
+            delay={300}
+            style={{ width: "100%" }}
+            onError={handleError}
+            onScan={handleScan}
+            facingMode="environment"
           />
         </div>
 
-        {/* Show scanned address */}
         {scannedAddress && (
           <div className="bg-gray-800 text-sm text-center p-2 rounded mb-4 break-words">
             Scanned Address:{" "}
@@ -50,7 +49,6 @@ export const PresaleModal = ({ isOpen, onClose }) => {
           </div>
         )}
 
-        {/* Input Field */}
         <input
           type="text"
           placeholder="Enter wallet address"
@@ -59,7 +57,6 @@ export const PresaleModal = ({ isOpen, onClose }) => {
           className="w-full px-4 py-2 mb-4 rounded-md bg-gray-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400"
         />
 
-        {/* Deposit Button */}
         <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-black font-semibold py-3 w-full rounded-lg hover:opacity-90 transition">
           Deposit SOL Now
         </button>
