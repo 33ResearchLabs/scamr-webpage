@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import QrReader from "react-qr-scanner";
 
 export const PresaleModal = ({ isOpen, onClose }) => {
   const [scannedAddress, setScannedAddress] = useState("");
@@ -33,21 +32,21 @@ export const PresaleModal = ({ isOpen, onClose }) => {
         </p>
 
         <div className="rounded-lg overflow-hidden mb-4">
-          <QrReader
+          {/* <QrReader
             delay={300}
             style={{ width: "100%" }}
             onError={handleError}
             onScan={handleScan}
             facingMode="environment"
-          />
+          /> */}
         </div>
 
-        {scannedAddress && (
+        {/* {scannedAddress && (
           <div className="bg-gray-800 text-sm text-center p-2 rounded mb-4 break-words">
             Scanned Address:{" "}
             <span className="text-cyan-400">{scannedAddress}</span>
           </div>
-        )}
+        )} */}
 
         <input
           type="text"
