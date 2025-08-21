@@ -1,8 +1,10 @@
 import React, { use, useEffect, useState } from "react";
+import { PresaleModal } from "./PresaleModel";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-
+  const [modelOpen, setModelOpen] = useState(false);
+  console.log(modelOpen);
   useEffect(() => {
     if (location.hash) {
       const element = document.querySelector(location.hash);
@@ -49,7 +51,10 @@ export const Header = () => {
           <a href="#roadmap" className="hover:text-cyan-400 transition-colors">
             Roadmap
           </a>
-          <button className="hidden md:block bg-transparent border border-cyan-400 text-cyan-400 py-2 px-6 rounded-lg hover:bg-cyan-400 hover:text-black transition-all">
+          <button
+            onClick={() => setModelOpen(true)}
+            className="hidden md:block bg-transparent border border-cyan-400 text-cyan-400 py-2 px-6 rounded-lg hover:bg-cyan-400 hover:text-black transition-all"
+          >
             Join Presale
           </button>
           <button className="md:hidden text-white">
@@ -68,6 +73,12 @@ export const Header = () => {
               ></path>
             </svg>
           </button>
+          {modelOpen && (
+            <PresaleModal
+              isOpen={modelOpen}
+              onClose={() => setModelOpen(false)}
+            />
+          )}
         </div>
       </nav>
     </header>
