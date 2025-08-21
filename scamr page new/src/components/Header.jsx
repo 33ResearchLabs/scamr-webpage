@@ -4,7 +4,6 @@ import { PresaleModal } from "./PresaleModel";
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [modelOpen, setModelOpen] = useState(false);
-  console.log(modelOpen);
   useEffect(() => {
     if (location.hash) {
       const element = document.querySelector(location.hash);

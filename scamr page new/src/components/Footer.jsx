@@ -74,7 +74,7 @@ export const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="#whitepaper" className="hover:text-cyan-400 transition">
+              <a href="#" className="hover:text-cyan-400 transition">
                 Whitepaper
               </a>
             </li>
@@ -87,9 +87,19 @@ export const Footer = () => {
             Contact Us
           </h3>
           <ul className="text-sm space-y-2">
-            <li>info@scamr.xyz</li>
-            <li>Telegram Community</li>
-            <li>Discord Server</li>
+            <li>info@scamr.xyz</li>{" "}
+            <li>
+              {" "}
+              <a href="https://t.me/scamr_official" target="_blank">
+                Telegram Community
+              </a>
+            </li>{" "}
+            <li>
+              {" "}
+              <a href="https://discord.com/invite/scamr" target="_blank">
+                Discord Server{" "}
+              </a>
+            </li>
           </ul>
         </div>
 
