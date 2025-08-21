@@ -7,6 +7,7 @@ import { Footer } from "../components/Footer";
 import Tokenomics from "../components/TokenomicsSection";
 import { RoadmapSection } from "../components/RoadmapSection";
 import { FAQSection } from "../components/Faq";
+import { Helmet } from "react-helmet-async";
 
 export const HomePage = () => {
   const appStyle = {
@@ -24,6 +25,40 @@ export const HomePage = () => {
 
   return (
     <div id="home" style={appStyle}>
+      {/* Helmet Meta Tags */}
+      <Helmet>
+        {/* Title & Description */}
+        <title>Solana Token Intelligence | On-Chain Safety Tools | Scamr</title>
+        <meta
+          name="description"
+          content="Discover hidden risks before you invest. Scamr provides advanced on-chain analytics, Solana token audits, and scam detection to secure your portfolio."
+        />
+
+        {/* Keywords (flattened & trimmed) */}
+        <meta
+          name="keywords"
+          content="Solana Token, Decentralized, Solana Network, Altcoin, Cryptocurrency, Investing, Token Intelligence, Solana Insights, Solana Community, Solana memecoin, Solana NFT, Solana whale tracking, Solana token audit, Solana token alerts, Scamr, scam detection, solana analytics tools, Crypto"
+        />
+
+        <meta name="author" content="SCAMR Team" />
+
+        {/* Open Graph (OG) Tags */}
+        <meta
+          property="og:title"
+          content="Solana Token Intelligence | On-Chain Safety Tools | Scamr"
+        />
+        <meta
+          property="og:description"
+          content="Discover hidden risks before you invest. Scamr provides advanced on-chain analytics, Solana token audits, and scam detection to secure your portfolio."
+        />
+        <meta property="og:image" content="/image.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.scamr.xyz/" />
+
+        {/* Responsive Meta Tag */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Helmet>
+
       {/* Full-width Header */}
       {/* Section with image background */}
       <div className="h-[700px]">
