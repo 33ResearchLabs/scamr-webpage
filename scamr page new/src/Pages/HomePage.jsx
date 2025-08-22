@@ -11,16 +11,7 @@ import { Helmet } from "react-helmet-async";
 
 export const HomePage = () => {
   const appStyle = {
-    background: "#070630",
-    backgroundImage: `linear-gradient(
-      90deg,
-      rgba(7, 6, 48, 1) 0%,
-      rgba(7, 7, 62, 1) 0%,
-      rgba(0, 0, 3, 1) 38%,
-      rgba(9, 9, 121, 1) 100%,
-      rgba(3, 150, 214, 1) 100%,
-      rgba(0, 212, 255, 1) 100%
-    )`,
+    background: " #0A0A0A",
   };
 
   return (
@@ -78,30 +69,45 @@ export const HomePage = () => {
         </div>
       </div>
 
-      <section id="about" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Add scroll margin to each section for proper spacing when navigating */}
+      <section
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 "
+        style={{ scrollMarginTop: "80px" }}
+      >
         {/* Features Section */}
         <FeaturesSection />
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        id="about"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 pt-20"
+      >
         <ScannerSection />
       </section>
 
       <section
         id="tokenomics"
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 "
       >
         <Tokenomics />
       </section>
+
       <section
         id="roadmap"
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 place-items-start "
+        style={{ scrollMarginTop: "80px" }}
       >
         <RoadmapSection />
       </section>
-      <section id="faq" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+      <section
+        id="faq"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-20"
+        style={{ scrollMarginTop: "80px" }}
+      >
         <FAQSection />
       </section>
+
       <Footer />
     </div>
   );

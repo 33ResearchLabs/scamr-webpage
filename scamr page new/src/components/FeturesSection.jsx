@@ -44,12 +44,15 @@ export const FeaturesSection = () => {
   ];
 
   return (
-    <div className="py-20 px-6">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-5xl font-bold text-white">
+    <div className=" px-6 py-12">
+      <h2 className="text-2xl  text-white sm:text-3xl lg:text-4xl font-bold text-center mb-8 sm:mb-12 lg:mb-16">
+        Fea<span className="text-cyan-400">tures</span>
+      </h2>
+      <div className="flex justify-center text-center mb-4 mx-auto gap-3">
+        <h2 className="text-3xl md:text-3xl font-bold text-white">
           Pioneering On-Chain
         </h2>
-        <h2 className="text-3xl md:text-5xl font-bold text-cyan-400">
+        <h2 className="text-3xl md:text-3xl font-bold text-white">
           Trust & Transparency
         </h2>
       </div>
@@ -66,12 +69,15 @@ export const FeaturesSection = () => {
             key={index}
             className=" p-8 rounded-2xl border border-gray-800 hover:border-cyan-400 transition-all duration-300 transform hover:-translate-y-2"
           >
-            <div className="flex items-center justify-center h-12 w-12 rounded-full bg-gray-800 text-cyan-400 mb-6">
-              {feature.icon}
+            <div className="flex gap-5">
+              <div className="flex items-center justify-center h-12 w-12 rounded-full bg-gray-800 text-cyan-400 mb-6">
+                {feature.icon}
+              </div>
+              <h3 className="text-xl font-bold text-white mb-4">
+                {feature.title}
+              </h3>
             </div>
-            <h3 className="text-xl font-bold text-white mb-4">
-              {feature.title}
-            </h3>
+
             <p className="text-gray-400">{feature.description}</p>
           </div>
         ))}

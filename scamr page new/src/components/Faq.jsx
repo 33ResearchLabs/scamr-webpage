@@ -51,7 +51,7 @@ export const FAQSection = () => {
   };
 
   return (
-    <div className=" p-8 md:p-12 rounded-2xl border border-gray-800">
+    <div className=" p-8 md:p-12 ">
       <div className="text-white py-10 px-6 ">
         <div className="max-w-5xl mx-auto text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">
